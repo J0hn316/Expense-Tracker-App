@@ -56,9 +56,10 @@ Then open [http://localhost:5173](http://localhost:5173) to view it in the brows
 expense-tracker-app/
 ├── public/
 ├── src/
-│   ├── components/        # Reusable components (Header, TransactionList, etc.)
+│   ├── components/        # Reusable components
 │   ├── types/             # TypeScript types
 │   ├── utils/             # Helper functions (e.g. formatting)
+│   ├── hooks/             # Hook to manage expense state
 │   ├── App.tsx            # Root component
 │   ├── main.tsx           # App entry
 │   └── index.css          # Tailwind base styles
