@@ -23,10 +23,15 @@ export default function ExpenseList({ expenses, onDelete }: ExpenseListProps) {
         >
           <div>
             <p className="text-sm text-gray-500">{expense.date}</p>
-            <p className="font-semibold">{expense.description}</p>
+            <p className="font-semibold">{expense.title}</p>
+            <p className="text-sm text-gray-600 italic">
+              {expense.description}
+            </p>
           </div>
           <div className="text-right">
-            <p className="text-lg font-bold text-blue-600">${expense.amount}</p>
+            <p className="text-lg font-bold text-blue-600">
+              ${expense.amount.toFixed(2)}
+            </p>
             <button
               onClick={() => onDelete(expense.id)}
               className="text-sm bg-red-500 text-white rounded p-2 hover:bg-red-400 mt-1"
