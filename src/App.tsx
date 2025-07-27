@@ -1,5 +1,6 @@
 import useExpenses from './hooks/useExpenses';
 import ExpenseForm from './components/ExpenseForm';
+import ExpenseList from './components/ExpenseList';
 
 const App = () => {
   const { expenses, addExpense, deleteExpense } = useExpenses();
@@ -9,6 +10,10 @@ const App = () => {
       <h1 className="text-3xl font-bold mb-4">💸 Expense Tracker</h1>
       {/* Add Expense Form */}
       <ExpenseForm onAdd={addExpense} />
+
+      {/* Expense List */}
+      <ExpenseList expenses={expenses} onDelete={deleteExpense} />
+
       {/* Expenses Preview (temporary debug output) */}
       <pre className="mt-6 bg-white p-4 rounded shadow">
         {JSON.stringify(expenses, null, 2)}

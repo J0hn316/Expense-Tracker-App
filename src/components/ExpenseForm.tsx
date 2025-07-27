@@ -9,6 +9,7 @@ export default function ExpenseForm({ onAdd }: ExpenseFormProps) {
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState('');
   const [category, setCategory] = useState('');
+  const [description, setDescription] = useState('');
   const [date, setDate] = useState('');
 
   const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
@@ -20,10 +21,11 @@ export default function ExpenseForm({ onAdd }: ExpenseFormProps) {
     }
 
     onAdd({
-      title,
-      amount: parseFloat(amount),
-      category,
       date,
+      title,
+      description,
+      category,
+      amount: parseFloat(amount),
     });
 
     // Reset form
@@ -31,6 +33,7 @@ export default function ExpenseForm({ onAdd }: ExpenseFormProps) {
     setAmount('');
     setCategory('');
     setDate('');
+    setDescription('');
   };
 
   return (
@@ -39,6 +42,16 @@ export default function ExpenseForm({ onAdd }: ExpenseFormProps) {
       className="space-y-4 bg-white p-4 rounded shadow"
     >
       <div>
+        <label className="block font-semibold mb-1">Date</label>
+        <input
+          type="date"
+          className="w-full border px-3 py-2 rounded"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+        />
+      </div>
+
+      <div>
         <label className="block font-semibold mb-1">Title</label>
         <input
           type="text"
@@ -46,6 +59,17 @@ export default function ExpenseForm({ onAdd }: ExpenseFormProps) {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="e.g. Grocery Shopping"
+        />
+      </div>
+
+      <div>
+        <label className="block font-semibold mb-1">Description</label>
+        <input
+          type="text"
+          className="w-full border px-3 py-2 rounded"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          placeholder="e.g. Buy milk, eggs, and bread"
         />
       </div>
 
@@ -74,16 +98,6 @@ export default function ExpenseForm({ onAdd }: ExpenseFormProps) {
           <option value="Bills">Bills</option>
           <option value="Other">Other</option>
         </select>
-      </div>
-
-      <div>
-        <label className="block font-semibold mb-1">Date</label>
-        <input
-          type="date"
-          className="w-full border px-3 py-2 rounded"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-        />
       </div>
 
       <button
