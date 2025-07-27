@@ -1,33 +1,17 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import useExpenses from './hooks/useExpenses';
-import ExpenseForm from './components/ExpenseForm';
 import ExpenseList from './components/ExpenseList';
+import ExpenseForm from './components/ExpenseForm';
+import ExpenseSummary from './components/ExpenseSummary';
 
 const App: React.FC = () => {
   const { expenses, addExpense, deleteExpense } = useExpenses();
 
-  // Calculate total amount spent
-  const totalSpent = useMemo(() => {
-    return expenses.reduce((sum, expense) => sum + expense.amount, 0);
-  }, [expenses]);
-
-  // Calculate number of expenses
-  const totalCount = useMemo(() => expenses.length, [expenses]);
-
   return (
     <main className="min-h-screen bg-gray-400 p-6 max-w-2xl mx-auto">
       <h1 className="text-3xl font-bold mb-4">💸 Expense Tracker</h1>
-
-      <div className="mb-6">
-        <p className="text-lg font-semibold text-gray-700">
-          Total Spent:{' '}
-          <span className="text-green-600">${totalSpent.toFixed(2)}</span>
-        </p>
-        <p className="text-lg font-semibold text-gray-700">
-          Number of Expenses:{' '}
-          <span className="text-blue-600">{totalCount}</span>
-        </p>
-      </div>
+      {/* Expense Summary */}
+      <ExpenseSummary expenses={expenses} />
 
       {/* Add Expense Form */}
       <ExpenseForm onAdd={addExpense} />
