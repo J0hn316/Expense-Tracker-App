@@ -9,8 +9,6 @@ export default function App() {
   const { expenses, addExpense, deleteExpense } = useExpenses();
   const [filters, setFilters] = useState({ category: '', month: '', year: '' });
 
-  console.log('All Expenses:', expenses);
-
   // 🔹 Extract unique categories and years
   const uniqueCategories = useMemo(
     () => Array.from(new Set(expenses.map((e) => e.category))).filter(Boolean),
