@@ -1,20 +1,65 @@
 # 💸 Expense Tracker App
 
-A simple and modern Expense Tracker built with **React**, **TypeScript**, **Tailwind CSS**, and **Vite**.
-
-This app lets users add and manage their expenses, view transaction history, and see their balance update in real-time.
+A simple and responsive Expense Tracker built using **React**, **TypeScript**, and **Tailwind CSS**. This app allows users to log expenses with detailed information, filter by category/date, and view summary statistics — all stored locally in the browser.
 
 ---
 
 ## 🚀 Features
 
-- Add new expenses with title and amount
-- Real-time balance and expense summary
-- Delete transactions
-- Responsive and minimalist UI with Tailwind CSS
-- Built with Vite for lightning-fast dev experience
+- ✅ Add new expenses with:
+  - Title, Amount, Date, Category, and optional Description
+- ✅ View all expenses in a list
+- ✅ Delete any expense entry
+- ✅ Filter expenses by:
+  - Category (dynamically generated)
+  - Month
+  - Year (dynamically generated)
+- ✅ View expense summary:
+  - Total amount spent
+  - Total number of expenses
+- ✅ Clear filters to reset view
+- ✅ Data persists using `localStorage`
+- ✅ Mobile-first responsive layout with Tailwind CSS
 
 ---
+
+## 🧠 Technologies Used
+
+- **React** with functional components
+- **TypeScript** for static typing
+- **Tailwind CSS** for styling
+- **Custom Hooks** (`useExpenses`) to encapsulate logic
+
+---
+
+## 🧩 Future Improvements (Tier 3 Ideas)
+
+- Add chart visualizations (e.g., Pie or Bar charts)
+- Edit/update existing expenses
+- User accounts & authentication
+- Backend integration with a database (e.g., Firebase, Supabase, etc.)
+- Pagination, search, and sorting
+
+---
+
+## 🧾 Project Structure
+
+```
+expense-tracker-app/
+├── public/
+├── src/
+│   ├── components/        # Reusable components
+│   ├── types/             # TypeScript types
+│   ├── utils/             # Helper functions (e.g. formatting)
+│   ├── hooks/             # Hook to manage expense state
+│   ├── App.tsx            # Root component
+│   ├── main.tsx           # App entry
+│   └── index.css          # Tailwind base styles
+├── tailwind.config.js
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
+```
 
 ## 🛠 Tech Stack
 
@@ -49,25 +94,6 @@ npm run dev
 Then open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
 ---
-
-## 🧾 Project Structure
-
-```
-expense-tracker-app/
-├── public/
-├── src/
-│   ├── components/        # Reusable components
-│   ├── types/             # TypeScript types
-│   ├── utils/             # Helper functions (e.g. formatting)
-│   ├── hooks/             # Hook to manage expense state
-│   ├── App.tsx            # Root component
-│   ├── main.tsx           # App entry
-│   └── index.css          # Tailwind base styles
-├── tailwind.config.js
-├── tsconfig.json
-├── vite.config.ts
-└── README.md
-```
 
 ## 📄 License
 
