@@ -9,7 +9,7 @@ export default function ExpenseSummary({ expenses }: ExpenseSummaryProps) {
   const totalCount = expenses.length;
 
   return (
-    <div className="bg-white p-4 rounded shadow mb-4">
+    <div className="bg-white p-4 rounded shadow mb-4 mt-2">
       <h2 className="text-xl font-semibold mb-2">Summary</h2>
       <div className="flex justify-between text-gray-700">
         <span>Total Expenses:</span>
