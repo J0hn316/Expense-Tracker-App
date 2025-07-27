@@ -9,7 +9,7 @@ type UseExpensesReturn = {
   deleteExpense: (id: number) => void;
 };
 
-export const useExpenses = (): UseExpensesReturn => {
+export default function useExpenses(): UseExpensesReturn {
   const [expenses, setExpenses] = useState<Expense[]>([]);
 
   // Load from localStorage on initial render
@@ -44,4 +44,4 @@ export const useExpenses = (): UseExpensesReturn => {
   };
 
   return { expenses, addExpense, deleteExpense };
-};
+}
