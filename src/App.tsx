@@ -53,17 +53,21 @@ export default function App() {
     <main className="min-h-screen bg-gray-400 p-6 max-w-2xl mx-auto">
       <h1 className="text-3xl font-bold mb-4">💸 Expense Tracker</h1>
       <ExpenseForm onAdd={addExpense} />
+
       <ExpenseFilters
         categories={uniqueCategories}
         years={uniqueYears}
         onFilterChange={handleFilterChange}
       />
+
       <ExpenseSummary expenses={filteredExpenses} />
+
       <ExpenseList expenses={filteredExpenses} onDelete={deleteExpense} />
-      {/* Expenses Preview (temporary debug output) */}
+
+      {/* Expenses Preview (temporary debug output)
       <pre className="mt-6 bg-white p-4 rounded shadow">
         {JSON.stringify(expenses, null, 2)}
-      </pre>
+      </pre> */}
     </main>
   );
 }
